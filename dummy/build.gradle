@@ -1,0 +1,33 @@
+apply plugin: 'org.springframework.boot'
+
+group 'pl.pietrzam'
+version '0.0.1-SNAPSHOT'
+
+sourceCompatibility = 11
+
+bootJar {
+    mainClassName = 'pl.pietrzam.circuit.demo.DemoApplication'
+}
+
+bootRun {
+    main = 'pl.pietrzam.circuit.demo.DemoApplication'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // some spring
+    runtimeOnly 'org.springframework.boot:spring-boot-devtools'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    annotationProcessor 'org.projectlombok:lombok'
+    compileOnly 'org.projectlombok:lombok'
+
+    compile 'javax.xml.bind:jaxb-api:2.3.0'
+    compile 'javax.xml.ws:jaxws-api:2.2.6'
+    compile 'javax.jws:javax.jws-api:1.1'
+    runtime 'org.glassfish.jaxb:jaxb-runtime:2.3.0'
+
+}

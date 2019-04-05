@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  demo-app:
+    build:
+      context: ./demo
+      args:
+        JAR_HOME: build/libs
+    ports:
+      - "8080:8080"
+  dummy-app:
+    build:
+      context: ./dummy
+      args:
+        JAR_HOME: build/libs
+    ports:
+      - "8180"

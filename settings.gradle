@@ -1,0 +1,4 @@
+rootProject.name = 'pl.pietrzam.circuit'
+include ':demo'
+include ':dummy'
+

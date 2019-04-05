@@ -1,0 +1,41 @@
+group = 'pl.pietrzam'
+version = '0.0.1-SNAPSHOT'
+
+
+buildscript {
+    ext {
+        resilience4jVersion = '0.13.2'
+        assertjVersion = '3.11.1'
+        junitJupiterVersion = '5.3.2'
+        springBootVersion = '2.1.4.RELEASE'
+    }
+
+    repositories {
+        jcenter()
+        mavenCentral()
+        mavenLocal()
+    }
+
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+
+}
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'idea'
+    apply plugin: 'io.spring.dependency-management'
+
+    sourceCompatibility = 11
+    targetCompatibility = 11
+
+    configurations {
+        compileOnly {
+            extendsFrom annotationProcessor
+        }
+    }
+
+    repositories {
+        mavenCentral()
+    }
+}
