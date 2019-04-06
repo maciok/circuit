@@ -48,5 +48,13 @@ class CircuitResource {
     return ResponseEntity.ok(error.ping());
   }
 
+  @GetMapping("/maybe/retrier")
+  @ResponseBody
+  ResponseEntity pingMaybeWithRetry() {
+    return ResponseEntity.ok(maybe.pingWithRetry());
+  }
+  
+  
+
 
 }

@@ -4,7 +4,7 @@ version = '0.0.1-SNAPSHOT'
 
 buildscript {
     ext {
-        resilience4jVersion = '0.13.2'
+        resilience4jVersion = '0.14.1'
         assertjVersion = '3.11.1'
         junitJupiterVersion = '5.3.2'
         springBootVersion = '2.1.4.RELEASE'

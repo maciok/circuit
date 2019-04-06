@@ -30,10 +30,13 @@ dependencies {
     compile 'javax.jws:javax.jws-api:1.1'
     runtime 'org.glassfish.jaxb:jaxb-runtime:2.3.0'
 
-    // pl.pietrzam.circuit breaker
+    // circuit breaker
     compile("io.github.resilience4j:resilience4j-spring-boot2:${resilience4jVersion}")
     compile("io.github.resilience4j:resilience4j-metrics:${resilience4jVersion}")
     compile("io.github.resilience4j:resilience4j-prometheus:${resilience4jVersion}")
+    compile("io.github.resilience4j:resilience4j-retry:${resilience4jVersion}")
+    compile("io.github.resilience4j:resilience4j-cache:${resilience4jVersion}")
+
     compile("io.vavr:vavr-jackson:0.9.1")
 
     // tests
