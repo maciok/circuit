@@ -38,6 +38,7 @@ dependencies {
     compile("io.github.resilience4j:resilience4j-cache:${resilience4jVersion}")
 
     compile("io.vavr:vavr-jackson:0.9.1")
+    compile("com.google.guava:guava:27.1-jre")
 
     // tests
     testImplementation 'org.springframework.boot:spring-boot-starter-test'

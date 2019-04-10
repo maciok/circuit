@@ -54,7 +54,4 @@ class CircuitResource {
     return ResponseEntity.ok(maybe.pingWithRetry());
   }
   
-  
-
-
 }

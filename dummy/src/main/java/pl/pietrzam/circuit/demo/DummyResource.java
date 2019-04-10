@@ -46,10 +46,10 @@ class DummyResource {
     boolean shouldFail = ThreadLocalRandom.current().nextBoolean();
 
     if (shouldFail) {
-      log.info("Ill be error");
+      log.info("It'll be error");
       return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
     } else {
-      log.info("Ill be ok");
+      log.info("It'll be ok");
       return ResponseEntity.status(HttpStatus.OK).build();
     }
   }

@@ -10,10 +10,11 @@ import org.springframework.web.client.RestTemplate;
 @Service
 @CircuitBreaker(name = "dummyService")
 @AllArgsConstructor
-public class BadService {
+public class BadService  implements PingService{
 
   private final RestTemplate restTemplate;
   
+  @Override
   public String ping() {
     restTemplate.exchange("/bad", HttpMethod.GET, HttpEntity.EMPTY, String.class);
     return "OK!";
