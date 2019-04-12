@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import pl.pietrzam.circuit.service.BadService;
 import pl.pietrzam.circuit.service.ErrorService;
 import pl.pietrzam.circuit.service.GoodService;
+import pl.pietrzam.circuit.service.LimitedService;
 import pl.pietrzam.circuit.service.MaybeService;
 
 @RestController
@@ -23,6 +24,7 @@ class CircuitResource {
   private final BadService bad;
   private final MaybeService maybe;
   private final ErrorService error;
+  private final LimitedService limited;
 
   @GetMapping("/good")
   @ResponseBody
@@ -52,6 +54,11 @@ class CircuitResource {
   @ResponseBody
   ResponseEntity pingMaybeWithRetry() {
     return ResponseEntity.ok(maybe.pingWithRetry());
+  }
+  
+  @GetMapping("/limited")
+  ResponseEntity pingWithLimits() {
+    return ResponseEntity.ok(limited.ping());
   }
   
 }

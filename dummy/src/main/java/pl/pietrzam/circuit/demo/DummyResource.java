@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
 @AllArgsConstructor(access = AccessLevel.PACKAGE)
 @Slf4j
 class DummyResource {
+  
+  private final LimitedService limited;
 
   @GetMapping("/good")
   @ResponseBody
@@ -53,5 +55,20 @@ class DummyResource {
       return ResponseEntity.status(HttpStatus.OK).build();
     }
   }
+
+  @GetMapping("/limited")
+  @ResponseBody
+  ResponseEntity pingLimited() {
+    log.info("Invoking limited");
+    
+    if(limited.tryExecute()) {
+      log.info("It's just right");
+      return ResponseEntity.status(HttpStatus.OK).body("just right");
+    } else {
+      log.info("Too frequently");
+      return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("too frequently");
+    }
+  }
+
 
 }
